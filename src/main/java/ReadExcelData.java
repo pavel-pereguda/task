@@ -26,10 +26,10 @@ class ReadExcelData {
             e.printStackTrace();
         }
         StreamingReader reader = StreamingReader.builder()
-                .rowCacheSize(100)    // number of rows to keep in memory (defaults to 10)
-                .bufferSize(4096)     // buffer size to use when reading InputStream to file (defaults to 1024)
-                .sheetIndex(0)        // index of sheet to use (defaults to 0)
-                .read(is);            // InputStream or File for XLSX file (required)
+                .rowCacheSize(100)
+                .bufferSize(4096)
+                .sheetIndex(0)
+                .read(is);
         int i = 0;
         data = new ArrayListMultimap<>();
         for (Row r : reader) {

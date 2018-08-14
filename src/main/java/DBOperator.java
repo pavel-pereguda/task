@@ -20,10 +20,8 @@ public class DBOperator {
                 ReadExcelData excelData = new ReadExcelData("Test3.xlsx");
                 CreateQueries createQueries = new CreateQueries();
                 stmt.execute(createQueries.createTable(excelData.getRowCount()));
-//                System.out.println(createQueries.createTable(excelData.getRowCount()));
                 System.out.println("CreateTable successfully");
                 stmt.executeUpdate(createQueries.fillWithData(excelData.getData(),excelData.getRowCount()));
-//                System.out.println((createQueries.fillWithData(excelData.getData(),excelData.getRowCount())));
                 System.out.println("Fill with data");
 
             } catch (ClassNotFoundException e) {
